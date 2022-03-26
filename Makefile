@@ -17,6 +17,10 @@ wasm32-wasi-sysroot:
 clean:
 	rm -rf wasm32-wasi-sysroot
 
-.PHONY: build-container clean
+tar: all
+	tar -zcf wasm32-wasi-sysroot.tar.gz wasm32-wasi-sysroot
+	cd wasm32-wasi-sysroot/lib/wasm32-wasi && tar -zcf ../../../wasm32-wasi-libs.tar.gz *
+
+.PHONY: build-container clean all tar
 
 include libs/*/Makefile
