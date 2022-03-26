@@ -6,10 +6,8 @@ Use `make <libname>` to build a library, or `make all` to make all of them. Dock
 
 Included libraries:
 
-+---+---+---+
 | Name | Description | Source |
-+---+---+---+
+| --- | --- | --- |
 | libc | wasi-libc based on musl 1.2.2, from wasi-sdk-14 | [Source](https://github.com/WebAssembly/wasi-libc) |
 | libclang_rt | Clang's runtime library, from wasi-sdk-14 | [Source](https://github.com/WebAssembly/wasi-sdk) |
 | libpcre | PCRE library version 8.45 | [Source](https://www.pcre.org/) |
-+---+---+---+
