@@ -1,6 +1,6 @@
 set -e
 
-WASI_SDK=14
+WASI_SDK=16
 
 wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-$WASI_SDK/wasi-sysroot-$WASI_SDK.0.tar.gz
 tar -xzf wasi-sysroot-$WASI_SDK.0.tar.gz
