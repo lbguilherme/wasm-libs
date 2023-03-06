@@ -10,11 +10,15 @@ RUN apk add --no-cache \
   binutils \
   clang \
   curl \
+  gcc \
   git \
   libtool \
   lld \
   llvm \
-  make
+  make \
+  musl-dev \
+  pkgconf \
+  python3-dev
 
 RUN \
   wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-19/libclang_rt.builtins-wasm32-wasi-19.0.tar.gz && \

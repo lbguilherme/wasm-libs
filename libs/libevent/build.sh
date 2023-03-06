@@ -1,19 +1,19 @@
 set -e
 
-git clone --branch v8.2.2 --depth 1 https://github.com/ivmai/bdwgc
-cd bdwgc
+git clone --branch release-2.1.12-stable --depth 1 https://github.com/libevent/libevent
+cd libevent
 
 export CC="clang"
-export CFLAGS="-target wasm32-wasi --sysroot=${SYSROOT} -DCPPCHECK -Os"
+export CFLAGS="-target wasm32-wasi --sysroot=${SYSROOT} -DCPPCHECK -Os -D_WASI_EMULATED_PROCESS_CLOCKS -D_WASI_EMULATED_SIGNAL"
 
 ./autogen.sh
 
 ./configure \
   --host=wasm32-wasi \
   --with-sysroot=${SYSROOT} \
-  --enable-static \
-  --disable-threads \
-  --disable-docs
+  --disable-samples \
+  --disable-openssl \
+  --disable-shared
 
 cat <<END >> include/private/gcconfig.h
 #ifndef GCCONFIG_EXT_H
